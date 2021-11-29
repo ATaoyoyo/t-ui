@@ -11,6 +11,7 @@
         'is-plain': plain,
       },
     ]"
+    @click="onClick($event)"
   >
     <slot></slot>
   </button>
@@ -35,6 +36,14 @@ export default defineComponent({
     round: Boolean,
 
     plain: Boolean,
+  },
+
+  setup(props, ctx) {
+    const onClick = (e: MouseEvent) => {
+      ctx.emit('click', e)
+    }
+
+    return { onClick }
   },
 })
 </script>
