@@ -11,6 +11,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path('src'),
+      '@style': path('src/style'),
+      '@package': path('src/package'),
     },
   },
 })

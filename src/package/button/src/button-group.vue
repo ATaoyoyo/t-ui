@@ -10,15 +10,15 @@ export default defineComponent({
 })
 </script>
 <style lang="less" scoped>
-@import url('@/style/theme.less');
+@import url('@style/theme.less');
 .t-button-group {
   /deep/ .t-button {
     margin: 0 !important;
     border-radius: 0;
 
     &:nth-child(2n) {
-      border-left: 0.5px solid @default;
-      border-right: 0.5px solid @default;
+      border-left: 1px solid @default;
+      border-right: 1px solid @default;
     }
 
     &:first-child {

@@ -1,0 +1,165 @@
+@import url('@style/common.less');
+@import url('@style/theme.less');
+
+@types: {
+  default: @default;
+  primary: @primary;
+  success: @success;
+  warning: @warning;
+  error: @error;
+  info: @info;
+}
+
+
+#hoverType() {
+  @default: @hoverDefault;
+  @primary: @hoverPrimary;
+  @success: @hoverSuccess;
+  @warning: @hoverWarning;
+  @error: @hoverError;
+  @info: @hoverInfo;
+}
+
+#disabledType() {
+  @default: @disabledDefault;
+  @primary: @disabledPrimary;
+  @success: @disabledSuccess;
+  @warning: @disabledWarning;
+  @error: @disabledError;
+  @info: @disabledInfo;
+}
+
+#plainType() {
+  @default: @plainDefault;
+  @primary: @plainPrimary;
+  @success: @plainSuccess;
+  @warning: @plainWarning;
+  @error: @plainError;
+  @info: @plainInfo;
+}
+
+#plainDisabledType() {
+  @default: @plainDefaultDisabled;
+  @primary: @plainPrimaryDisabled;
+  @success: @plainSuccessDisabled;
+  @warning: @plainWarningDisabled;
+  @error: @plainErrorDisabled;
+  @info: @plainInfoDisabled;
+}
+
+#plainBorderDisabledType() {
+  @default: @plainDefaultBorderDisabled;
+  @primary: @plainPrimaryBorderDisabled;
+  @success: @plainSuccessBorderDisabled;
+  @warning: @plainWarningBorderDisabled;
+  @error: @plainErrorBorderDisabled;
+  @info: @plainInfoBorderDisabled;
+}
+
+.t-button {
+  box-sizing: border-box;
+  transition: all 0.3s;
+
+  each(@types, {
+      &.is-@{key} {
+        color: if((@key =default) or (@key=text), @textBlack, @textWhite);
+        background-color: if(@key =text, @textWhite, @value);
+        border: 1px solid if(@key =default, @textBorder, @value);
+        border-width: if(@key =text, 0, 1px);
+
+        &:hover,
+        &:focus {
+          color: if(@key =default, @primary, @textWhite);
+          background-color: #hoverType[@@key];
+          border: 1px solid #hoverType[@@key];
+          border-width: if(@key =text, 0, 1px);
+        }
+
+        &.is-disabled {
+          cursor: not-allowed;
+
+          &.is-@{key} {
+            color: if(@key =default, @textBorder, @textWhite);
+            background-color: #disabledType[@@key];
+            border: 1px solid #disabledType[@@key];
+          }
+        }
+
+        &.is-plain {
+          color: if(@key =default, @textBlack, @value);
+          background-color: #plainType[@@key];
+          border: 1px solid if(@key=default, @textBorder, @value);
+
+          &:hover,
+          &:focus {
+            color: if(@key =default, @primary, @textWhite);
+            background-color: @value;
+            border: 1px solid if(@key=default, @primary, @value);
+          }
+
+          @disabledTextColor: #plainBorderDisabledType[@@key];
+
+          &.is-disabled {
+            color: if(@key =default, @textBorder, @value);
+            background-color: #plainDisabledType[@@key];
+            border: 1px solid #plainBorderDisabledType[@@key];
+          }
+        }
+
+        &.is-round {
+          border-radius: 20px
+        }
+
+        &.is-circle {
+          padding: 0;
+          width: 34px;
+          height: 34px;
+          border-radius: 50%;
+
+          &.middle {
+            width: 32px;
+            height: 32px;
+          }
+
+          &.small {
+            width: 30px;
+            height: 30px;
+          }
+
+          &.mini {
+            width: 28px;
+            height: 28px;
+          }
+        }
+
+        &.middle {
+          height: 32px;
+        }
+
+        &.small {
+          height: 30px;
+        }
+
+        &.mini {
+          height: 28px;
+        }
+      }
+
+      &.is-text {
+        color: @primary;
+        background-color: @textWhite;
+        border: none;
+
+        &:hover {
+          color: @hoverPrimary;
+        }
+
+        &.is-disabled {
+          color: @textBorder;
+          cursor: not-allowed;
+        }
+      }
+    }
+
+  );
+}
