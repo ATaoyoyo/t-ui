@@ -56,6 +56,12 @@
   @info: @plainInfoBorderDisabled;
 }
 
+@sizeTypes: {
+  middle: 32px;
+  small: 30px;
+  mini: 28px;
+}
+
 .t-button {
   box-sizing: border-box;
   transition: all 0.3s;
@@ -79,9 +85,9 @@
           cursor: not-allowed;
 
           &.is-@{key} {
-            color: if(@key =default, @textBorder, @textWhite);
+            @borderColor: #disabledType[@@key]; color: if(@key =default, @textBorder, @textWhite);
             background-color: #disabledType[@@key];
-            border: 1px solid #disabledType[@@key];
+            border: 1px solid if(@key=default, @textBorder, @borderColor);
           }
         }
 
@@ -116,33 +122,23 @@
           height: 34px;
           border-radius: 50%;
 
-          &.middle {
-            width: 32px;
-            height: 32px;
+          each(@sizeTypes, {
+              &.@{key} {
+                width: @value;
+                height: @value;
+              }
+            }
+
+          )
+        }
+
+        each(@sizeTypes, {
+            &.@{key} {
+              height: @value;
+            }
           }
 
-          &.small {
-            width: 30px;
-            height: 30px;
-          }
-
-          &.mini {
-            width: 28px;
-            height: 28px;
-          }
-        }
-
-        &.middle {
-          height: 32px;
-        }
-
-        &.small {
-          height: 30px;
-        }
-
-        &.mini {
-          height: 28px;
-        }
+        )
       }
 
       &.is-text {
