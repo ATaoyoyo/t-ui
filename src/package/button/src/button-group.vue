@@ -12,7 +12,7 @@ export default defineComponent({
 <style lang="less" scoped>
 @import url('@style/theme.less');
 .t-button-group {
-  /deep/ .t-button {
+  ::v-deep(.t-button) {
     margin: 0 !important;
     border-radius: 0;
 
