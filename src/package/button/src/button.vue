@@ -3,7 +3,7 @@
     class="t-button"
     :class="[
       type ? 'is-' + type : 'is-default',
-      size,
+      size ? 'is-' + size : '',
       {
         'is-circle': circle,
         'is-disabled': disabled,
@@ -38,7 +38,7 @@ export default defineComponent({
     plain: Boolean,
   },
 
-  setup(props, ctx) {
+  setup(_props, ctx) {
     const onClick = (e: MouseEvent) => {
       ctx.emit('click', e)
     }
