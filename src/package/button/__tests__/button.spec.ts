@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils'
-import TButton from '../index'
+import TButton, { TButtonGroup } from '../index'
 
 const text = 'Rem is the best gril.'
 
@@ -82,5 +82,15 @@ describe('Button.vue', () => {
     await wrapper.trigger('click')
 
     expect(wrapper.emitted()).toBeDefined()
+  })
+
+  it('button group', () => {
+    const wrapper = shallowMount(TButtonGroup, {
+      slots: {
+        default: '<TButton>Button 1</TButton><TButton>Button 2</TButton>',
+      },
+    })
+
+    expect(wrapper.text()).toContain('Button 1Button 2')
   })
 })
