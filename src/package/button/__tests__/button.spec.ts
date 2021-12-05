@@ -1,7 +1,7 @@
 import { shallowMount } from '@vue/test-utils'
 import TButton, { TButtonGroup } from '../index'
 
-const text = 'Rem is the best gril.'
+const text = 'that girl I never forget...'
 
 describe('Button.vue', () => {
   it('render text', () => {
@@ -22,6 +22,16 @@ describe('Button.vue', () => {
     })
 
     expect(wrapper.classes()).toContain('is-primary')
+  })
+
+  it('create dashed button', () => {
+    const wrapper = shallowMount(TButton, {
+      props: {
+        dashed: true,
+      },
+    })
+
+    expect(wrapper.classes()).toContain('is-dashed')
   })
 
   it('create small size button', () => {

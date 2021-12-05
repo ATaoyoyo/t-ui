@@ -9,6 +9,8 @@
         'is-disabled': disabled,
         'is-round': round,
         'is-plain': plain,
+        'is-dashed': dashed,
+        'is-text': text,
       },
     ]"
     @click="onClick($event)"
@@ -36,6 +38,10 @@ export default defineComponent({
     round: Boolean,
 
     plain: Boolean,
+
+    dashed: Boolean,
+
+    text: Boolean,
   },
 
   setup(_props, ctx) {
