@@ -1,6 +1,7 @@
 import TButton, { TButtonGroup } from './button'
+import TIcon from './icon'
 
-const COMPONENTS = [TButton, TButtonGroup]
+const COMPONENTS = [TButton, TButtonGroup, TIcon]
 
 const TUi = {
   install: function (Vue: any, options: {}) {

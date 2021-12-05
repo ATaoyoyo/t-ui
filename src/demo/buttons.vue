@@ -1,4 +1,4 @@
-<template lang="">
+<template>
   <div class="button">
     <div>
       <TButton>Default</TButton>
