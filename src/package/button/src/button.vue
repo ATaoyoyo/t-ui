@@ -15,7 +15,12 @@
     ]"
     @click="onClick($event)"
   >
-    <slot></slot>
+    <span class="t-button__icon">
+      <slot name="icon"></slot>
+    </span>
+    <span class="t-button__content">
+      <slot></slot>
+    </span>
   </button>
 </template>
 <script lang="ts">
@@ -56,4 +61,10 @@ export default defineComponent({
 
 <style lang="less" scoped>
 @import url('../style/index.less');
+.t-button {
+  &__icon {
+    // margin: 0 5px 0 0;
+    font-size: 18px;
+  }
+}
 </style>

@@ -13,10 +13,7 @@ export default defineComponent({
   components: { Icon },
 
   props: {
-    size: {
-      type: [String, Number],
-      default: 30,
-    },
+    size: [String, Number],
 
     color: String,
 
@@ -30,4 +27,9 @@ export default defineComponent({
 })
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.t-icon {
+  text-align: center;
+  vertical-align: middle;
+}
+</style>

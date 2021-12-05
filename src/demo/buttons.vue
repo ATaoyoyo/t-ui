@@ -49,16 +49,36 @@
     </div>
 
     <div>
-      <TButton circle>圆</TButton>
-      <TButton circle type="primary">圆</TButton>
-      <TButton circle type="success">圆</TButton>
-      <TButton circle type="warning">圆</TButton>
-      <TButton circle type="error">圆</TButton>
-      <TButton dashed circle>圆</TButton>
-      <TButton dashed circle type="primary">圆</TButton>
-      <TButton dashed circle type="success">圆</TButton>
-      <TButton dashed circle type="warning">圆</TButton>
-      <TButton dashed circle type="error">圆</TButton>
+      <TButton circle>
+        <TIcon color="#212121"><BarbellOutline /></TIcon>
+      </TButton>
+      <TButton circle type="primary">
+        <TIcon color="#fff"><BarbellOutline /></TIcon>
+      </TButton>
+      <TButton circle type="success">
+        <TIcon color="#fff"><BarbellOutline /></TIcon>
+      </TButton>
+      <TButton circle type="warning">
+        <TIcon color="#fff"><BarbellOutline /></TIcon>
+      </TButton>
+      <TButton circle type="error">
+        <TIcon color="#fff"><BarbellOutline /></TIcon>
+      </TButton>
+      <TButton dashed circle>
+        <TIcon color="#2080F0"><BarbellOutline /></TIcon>
+      </TButton>
+      <TButton dashed circle type="primary">
+        <TIcon color="#2080F0"><BarbellOutline /></TIcon>
+      </TButton>
+      <TButton dashed circle type="success">
+        <TIcon color="#18A058"><BarbellOutline /></TIcon>
+      </TButton>
+      <TButton dashed circle type="warning">
+        <TIcon color="#FCB040"><BarbellOutline /></TIcon>
+      </TButton>
+      <TButton dashed circle type="error">
+        <TIcon color="#D03050"><BarbellOutline /></TIcon>
+      </TButton>
     </div>
 
     <div>
@@ -79,21 +99,45 @@
 
     <div>
       <TButton dashed round>Default</TButton>
-      <TButton dashed round type="primary">Primary</TButton>
+      <TButton dashed round type="primary">
+        <template #icon>
+          <t-icon>
+            <CardOutline />
+          </t-icon>
+        </template>
+
+        Primary
+      </TButton>
       <TButton dashed round size="middle" type="success">Success</TButton>
       <TButton dashed round size="small" type="warning">Warning</TButton>
       <TButton dashed round size="mini" type="error">Error</TButton>
     </div>
 
     <div>
-      <TButton circle type="primary">圆</TButton>
-      <TButton size="middle" circle type="success">圆</TButton>
-      <TButton size="small" circle type="warning">圆</TButton>
-      <TButton size="mini" circle type="error">圆</TButton>
-      <TButton dashed circle type="primary">圆</TButton>
-      <TButton size="middle" dashed circle type="success">圆</TButton>
-      <TButton size="small" dashed circle type="warning">圆</TButton>
-      <TButton size="mini" dashed circle type="error">圆</TButton>
+      <TButton circle type="primary">
+        <TIcon color="#fff"><BarbellOutline /></TIcon>
+      </TButton>
+      <TButton size="middle" circle type="success">
+        <TIcon color="#fff"><BarbellOutline /></TIcon>
+      </TButton>
+      <TButton size="small" circle type="warning">
+        <TIcon color="#fff"><BarbellOutline /></TIcon>
+      </TButton>
+      <TButton size="mini" circle type="error">
+        <TIcon color="#fff"><BarbellOutline /></TIcon>
+      </TButton>
+      <TButton dashed circle type="primary">
+        <TIcon color="#2080F0"><BarbellOutline /></TIcon>
+      </TButton>
+      <TButton size="middle" dashed circle type="success">
+        <TIcon color="#18A058"><BarbellOutline /></TIcon>
+      </TButton>
+      <TButton size="small" dashed circle type="warning">
+        <TIcon color="#FCB040"><BarbellOutline /></TIcon>
+      </TButton>
+      <TButton size="mini" dashed circle type="error">
+        <TIcon color="#D03050" size="15"><BarbellOutline /></TIcon>
+      </TButton>
     </div>
 
     <div>
@@ -103,8 +147,11 @@
   </div>
 </template>
 <script lang="ts">
+import { BarbellOutline, CardOutline } from '@vicons/ionicons5'
 export default {
   name: 'Buttons',
+
+  components: { BarbellOutline, CardOutline },
 }
 </script>
 <style lang="less" scoped>
