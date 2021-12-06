@@ -19,11 +19,6 @@ export default defineComponent({
 
     tag: String,
   },
-
-  setup() {
-    const instance = getCurrentInstance()
-    console.log(instance)
-  },
 })
 </script>
 
