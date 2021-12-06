@@ -1,4 +1,4 @@
-import { shallowMount } from '@vue/test-utils'
+import { mount, shallowMount } from '@vue/test-utils'
 import TButton, { TButtonGroup } from '../index'
 
 const text = 'that girl I never forget...'
@@ -95,12 +95,21 @@ describe('Button.vue', () => {
   })
 
   it('button group', () => {
-    const wrapper = shallowMount(TButtonGroup, {
-      slots: {
-        default: '<TButton>Button 1</TButton><TButton>Button 2</TButton>',
+    const wrapper = mount({
+      template: `
+        <t-button-group>
+          <t-button>button one</t-button>
+          <t-button>button two</t-button>
+        </t-button-group>
+      `,
+
+      components: {
+        't-button': TButton,
+        't-button-group': TButtonGroup,
       },
     })
 
-    expect(wrapper.text()).toContain('Button 1Button 2')
+    expect(wrapper.classes()).toContain('t-button-group')
+    expect(wrapper.findAll('button').length).toBe(2)
   })
 })
