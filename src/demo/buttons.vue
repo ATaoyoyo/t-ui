@@ -1,6 +1,6 @@
 <template>
   <div class="button">
-    <div>
+    <div class="buttons">
       <TButton>Default</TButton>
       <TButton type="primary">Primary</TButton>
       <TButton type="success">Success</TButton>
@@ -8,7 +8,7 @@
       <TButton type="error">Error</TButton>
     </div>
 
-    <div>
+    <div class="buttons">
       <TButton round>Default</TButton>
       <TButton round type="primary">Primary</TButton>
       <TButton round type="success">Success</TButton>
@@ -16,7 +16,7 @@
       <TButton round type="error">Error</TButton>
     </div>
 
-    <div>
+    <div class="buttons">
       <TButton plain>Default</TButton>
       <TButton plain type="primary">Primary</TButton>
       <TButton plain type="success">Success</TButton>
@@ -24,7 +24,7 @@
       <TButton plain type="error">Error</TButton>
     </div>
 
-    <div>
+    <div class="buttons">
       <TButton round plain>Default</TButton>
       <TButton round plain type="primary">Primary</TButton>
       <TButton round plain type="success">Success</TButton>
@@ -32,7 +32,7 @@
       <TButton round plain type="error">Error</TButton>
     </div>
 
-    <div>
+    <div class="buttons">
       <TButton dashed>Default</TButton>
       <TButton dashed type="primary">Primary</TButton>
       <TButton dashed type="success">Success</TButton>
@@ -40,7 +40,7 @@
       <TButton dashed type="error">Error</TButton>
     </div>
 
-    <div>
+    <div class="buttons">
       <TButton round dashed>Default</TButton>
       <TButton round dashed type="primary">Primary</TButton>
       <TButton round dashed type="success">Success</TButton>
@@ -48,7 +48,7 @@
       <TButton round dashed type="error">Error</TButton>
     </div>
 
-    <div>
+    <div class="buttons">
       <TButton circle>
         <TIcon color="#212121"><BarbellOutline /></TIcon>
       </TButton>
@@ -81,23 +81,37 @@
       </TButton>
     </div>
 
-    <div>
+    <div class="buttons">
       <TButton>Default</TButton>
-      <TButton type="primary">Primary</TButton>
+      <TButton type="primary">
+        <template #icon>
+          <t-icon>
+            <CardOutline />
+          </t-icon>
+        </template>
+        Primary
+      </TButton>
       <TButton size="middle" type="success">Success</TButton>
       <TButton size="small" type="warning">Warning</TButton>
       <TButton size="mini" type="error">Error</TButton>
     </div>
 
-    <div>
+    <div class="buttons">
       <TButton round>Default</TButton>
-      <TButton round type="primary">Primary</TButton>
+      <TButton round type="primary">
+        <template #icon>
+          <t-icon>
+            <CardOutline />
+          </t-icon>
+        </template>
+        Primary
+      </TButton>
       <TButton round size="middle" type="success">Success</TButton>
       <TButton round size="small" type="warning">Warning</TButton>
       <TButton round size="mini" type="error">Error</TButton>
     </div>
 
-    <div>
+    <div class="buttons">
       <TButton dashed round>Default</TButton>
       <TButton dashed round type="primary">
         <template #icon>
@@ -113,7 +127,7 @@
       <TButton dashed round size="mini" type="error">Error</TButton>
     </div>
 
-    <div>
+    <div class="buttons">
       <TButton circle type="primary">
         <TIcon color="#fff"><BarbellOutline /></TIcon>
       </TButton>
@@ -140,7 +154,7 @@
       </TButton>
     </div>
 
-    <div>
+    <div class="buttons">
       <TButton plain disabled>Default</TButton>
       <TButton text>Just a Text Button</TButton>
     </div>
@@ -157,5 +171,9 @@ export default {
 <style lang="less" scoped>
 button {
   margin: 0 10px 10px 0;
+}
+.buttons {
+  display: flex;
+  align-items: center;
 }
 </style>

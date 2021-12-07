@@ -62,9 +62,21 @@ export default defineComponent({
 <style lang="less" scoped>
 @import url('../style/index.less');
 .t-button {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+
   &__icon {
-    // margin: 0 5px 0 0;
-    font-size: 18px;
+    font-size: 16px;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
   }
 }
 </style>
