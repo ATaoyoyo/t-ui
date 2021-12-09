@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, getCurrentInstance } from 'vue'
+import { defineComponent } from 'vue'
 import { Icon } from '@vicons/utils'
 export default defineComponent({
   name: 'TIcon',

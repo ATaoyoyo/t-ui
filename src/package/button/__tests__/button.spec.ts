@@ -1,9 +1,33 @@
 import { mount, shallowMount } from '@vue/test-utils'
 import TButton, { TButtonGroup } from '../index'
+import TIcon from '@/package/icon'
+import { AlbumsOutline as Albums } from '@vicons/ionicons5'
 
 const text = 'that girl I never forget...'
 
 describe('Button.vue', () => {
+  it('icon', () => {
+    const wrapper = mount({
+      template: `
+        <t-button>
+          <template #icon>
+            <t-icon><alnums/></t-icon>
+          </template>
+          图标按钮
+        </t-button>
+      `,
+
+      components: {
+        't-button': TButton,
+        't-icon': TIcon,
+        alnums: Albums,
+      },
+    })
+
+    expect(wrapper.findAll('svg').length).toBe(1)
+    expect(wrapper.classes()).toContain('t-button__icon')
+  })
+
   it('render text', () => {
     const wrapper = shallowMount(TButton, {
       slots: {
