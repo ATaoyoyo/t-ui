@@ -8,6 +8,10 @@ const path = (name: string) => resolve(__dirname, name)
 export default defineConfig({
   plugins: [vue()],
 
+  define: {
+    __VUE_PROD_DEVTOOLS__: true,
+  },
+
   resolve: {
     alias: {
       '@': path('src'),
