@@ -1,7 +1,7 @@
 <template>
   <div class="t-input" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave">
     <div class="t-input-wrapper">
-      <div class="t-input__input">
+      <div class="t-input__input" v-if="type !== 'textarea'">
         <input
           ref="input"
           class="t-input__input-el"
@@ -17,7 +17,19 @@
         </div>
       </div>
 
-      <div v-if="type === 'textarea'" class="t-input__textarea"></div>
+      <template v-if="type === 'textarea'">
+        <div class="t-input__textarea">
+          <textarea
+            class="t-input__textarea-el"
+            v-bind="attrs"
+            :rows="rows"
+            @input="handleInput"
+          ></textarea>
+          <div v-show="!modelValue" class="t-input__textarea-placeholder">
+            <span>{{ placeholder }}</span>
+          </div>
+        </div>
+      </template>
 
       <!-- clearable icon -->
       <div v-show="computedShowClearable" class="t-input__clearable">
@@ -31,7 +43,7 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, ref, PropType, computed } from 'vue'
+import { defineComponent, ref, PropType, computed, useAttrs } from 'vue'
 import { CloseCircleOutline as Close } from '@vicons/ionicons5'
 import { modelValue } from './input'
 
@@ -39,21 +51,21 @@ type TargetElement = HTMLInputElement | HTMLTextAreaElement
 export default defineComponent({
   name: 'TInput',
 
-  // emits: true,
+  emits: ['update:modelValue', 'mouseenter', 'mouseleave', 'foucs', 'blur'],
 
   props: {
     modelValue: { type: String as PropType<modelValue> },
     type: { type: String, default: 'text' },
     placeholder: String,
     clearable: Boolean,
+    rows: { type: Number, default: 2 },
   },
 
-  components: {
-    Close,
-  },
+  components: { Close },
 
   setup(props, { emit }) {
     // const showText = computed(() => {})
+    const attrs = useAttrs()
 
     const input = ref<HTMLInputElement>()
     const focused = ref(false)
@@ -87,9 +99,12 @@ export default defineComponent({
       emit('blur', event)
     }
 
-    const handleClear = () => {}
+    const handleClear = () => {
+      emit('update:modelValue', '')
+    }
 
     return {
+      attrs,
       input,
       handleInput,
       handleFocus,
