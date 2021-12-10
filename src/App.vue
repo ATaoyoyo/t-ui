@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import Buttons from '@/demo/buttons.vue'
+import Inputs from '@/demo/inputs.vue'
 import { AirplaneOutline } from '@vicons/ionicons5'
 </script>
 
 <template>
   <div id="app">
+    <Inputs />
     <Buttons />
     <TIcon color="#f66">
       <AirplaneOutline />
