@@ -3864,11 +3864,6 @@ normalize-path@^3.0.0:
   resolved "https://registry.nlark.com/normalize-path/download/normalize-path-3.0.0.tgz#0dcd69ff23a1c9b11fd0978316644a0388216a65"
   integrity sha1-Dc1p/yOhybEf0JeDFmRKA4ghamU=
 
-normalize.css@^8.0.1:
-  version "8.0.1"
-  resolved "https://registry.npm.taobao.org/normalize.css/download/normalize.css-8.0.1.tgz"
-  integrity sha1-m5iiCHOLnMJjTKrLxC0THJdIe/M=
-
 npm-run-path@^4.0.1:
   version "4.0.1"
   resolved "https://registry.npmmirror.com/npm-run-path/download/npm-run-path-4.0.1.tgz?cache=0&sync_timestamp=1633420549182&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fnpm-run-path%2Fdownload%2Fnpm-run-path-4.0.1.tgz#b7ecd1e5ed53da8e37a55e1c2269e0b97ed748ea"

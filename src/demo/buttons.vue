@@ -170,7 +170,7 @@ export default {
 </script>
 <style lang="less" scoped>
 button {
-  margin: 0 10px 10px 0;
+  margin: 0 10px 10px 0 !important;
 }
 .buttons {
   display: flex;

@@ -1,7 +1,11 @@
 <template>
   <div class="inputs">
     <t-input v-model="text" clearable placeholder="write sometings......" />
-    <t-input v-model="textarea" type="textarea" placeholder="this is textarea..." />
+    <t-input v-model="text" round clearable placeholder="write sometings......" />
+
+    <t-input v-model="textarea" clearable type="textarea" placeholder="this is textarea..." />
+
+    <t-input v-model="textarea" round clearable type="textarea" placeholder="this is textarea..." />
   </div>
 </template>
 <script lang="ts">
@@ -12,7 +16,7 @@ export default defineComponent({
   setup() {
     const state = reactive({
       text: 'this is a input...',
-      textarea: '',
+      textarea: 'this is a textarea!',
     })
 
     return { ...toRefs(state) }

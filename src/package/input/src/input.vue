@@ -1,33 +1,41 @@
 <template>
   <div class="t-input" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave">
     <div class="t-input-wrapper">
-      <div class="t-input__input" v-if="type !== 'textarea'">
-        <input
-          ref="input"
-          class="t-input__input-el"
-          :value="modelValue"
-          :type="type"
-          :clearable="clearable"
-          @input="handleInput"
-          @focus="handleFocus"
-          @blur="handleBlur"
-        />
-        <div v-show="!modelValue" class="t-input__placeholder">
+      <template v-if="type !== 'textarea'">
+        <div class="t-input__input">
+          <input
+            ref="input"
+            class="t-input__input-el"
+            :value="modelValue"
+            :type="type"
+            :clearable="clearable"
+            :placeholder="placeholder"
+            @input="handleInput"
+            @focus="handleFocus"
+            @blur="handleBlur"
+          />
+          <!-- <div v-show="!modelValue" class="t-input__placeholder">
           <span>{{ placeholder }}</span>
+        </div> -->
         </div>
-      </div>
+      </template>
 
-      <template v-if="type === 'textarea'">
+      <template v-else>
         <div class="t-input__textarea">
           <textarea
+            ref="textarea"
             class="t-input__textarea-el"
             v-bind="attrs"
+            :modelValue="modelValue"
             :rows="rows"
+            :placeholder="placeholder"
             @input="handleInput"
+            @focus="handleFocus"
+            @blur="handleBlur"
           ></textarea>
-          <div v-show="!modelValue" class="t-input__textarea-placeholder">
+          <!-- <div v-show="!modelValue" class="t-input__textarea-placeholder">
             <span>{{ placeholder }}</span>
-          </div>
+          </div> -->
         </div>
       </template>
 
@@ -58,6 +66,7 @@ export default defineComponent({
     type: { type: String, default: 'text' },
     placeholder: String,
     clearable: Boolean,
+    round: Boolean,
     rows: { type: Number, default: 2 },
   },
 
@@ -68,6 +77,7 @@ export default defineComponent({
     const attrs = useAttrs()
 
     const input = ref<HTMLInputElement>()
+    const textarea = ref<HTMLInputElement>()
     const focused = ref(false)
     const hovering = ref(false)
 
@@ -106,6 +116,8 @@ export default defineComponent({
     return {
       attrs,
       input,
+      textarea,
+
       handleInput,
       handleFocus,
       handleBlur,
