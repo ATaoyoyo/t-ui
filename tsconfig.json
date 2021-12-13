@@ -1,24 +1,20 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "strict": true,
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "isolatedModules": true,
-    "noImplicitAny": true,
-    "resolveJsonModule": true,
-    "jsx": "preserve",
-    "importHelpers": true,
-    "baseUrl": ".",
-    "lib": ["ESNext", "dom"],
     "paths": {
-      "@/*": ["./src/*"]
-    }
-  },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue"],
-  "exclude": ["node_modules"]
+      "naive-ui": ["./src"]
+    },
+    "strict": true,
+    "strictNullChecks": true,
+    "jsx": "react",
+    "jsxFactory": "h",
+    "jsxFragmentFactory": "Fragment",
+    "module": "ES6",
+    "moduleResolution": "Node",
+    "declaration": true,
+    "forceConsistentCasingInFileNames": true,
+    "composite": true,
+    "target": "ES6",
+    "esModuleInterop": true,
+    "lib": ["ESNext", "DOM"]
+  }
 }

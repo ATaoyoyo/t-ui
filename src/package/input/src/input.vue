@@ -33,11 +33,12 @@
             @focus="handleFocus"
             @blur="handleBlur"
           ></textarea>
-          <!-- <div v-show="!modelValue" class="t-input__textarea-placeholder">
-            <span>{{ placeholder }}</span>
-          </div> -->
         </div>
       </template>
+
+      <template v-if="$slots.prefix"></template>
+
+      <!-- <template v-if="suffix"></template> -->
 
       <!-- clearable icon -->
       <div v-show="computedShowClearable" class="t-input__clearable">

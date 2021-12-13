@@ -1241,7 +1241,7 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@^27.0.3":
+"@types/jest@^27.0.1", "@types/jest@^27.0.3":
   version "27.0.3"
   resolved "https://registry.npmmirror.com/@types/jest/download/@types/jest-27.0.3.tgz#0cf9dfe9009e467f70a342f0f94ead19842a783a"
   integrity sha512-cmmwv9t7gBYt7hNKH5Spu7Kuu/DotGa+Ff+JGRKZ4db5eh8PnKS4LuebJ3YLUoyOyIHraTGyULn23YtEAm0VSg==
@@ -1982,6 +1982,15 @@ css-render@^0.13.2:
   version "0.13.9"
   resolved "https://registry.npmmirror.com/css-render/download/css-render-0.13.9.tgz#56f28c180a83a10ec610a12a9ad9fec087ac9dc1"
   integrity sha1-VvKMGAqDoQ7GEKEqmtn+wIesncE=
+  dependencies:
+    "@emotion/hash" "~0.8.0"
+    "@types/node" "~14.14.31"
+    csstype "~3.0.5"
+
+css-render@^0.15.6:
+  version "0.15.6"
+  resolved "https://registry.nlark.com/css-render/download/css-render-0.15.6.tgz#93b778ffc38120f8cd4e135941f0d76ee4c1b783"
+  integrity sha1-k7d4/8OBIPjNThNZQfDXbuTBt4M=
   dependencies:
     "@emotion/hash" "~0.8.0"
     "@types/node" "~14.14.31"
@@ -4342,6 +4351,13 @@ section-matter@^1.0.0:
   dependencies:
     extend-shallow "^2.0.1"
     kind-of "^6.0.0"
+
+seemly@^0.3.3:
+  version "0.3.3"
+  resolved "https://registry.npmmirror.com/seemly/download/seemly-0.3.3.tgz#a6482f374e042f873f63dc7622cb1529c251574e"
+  integrity sha512-mAyqemz41e9HiZPMXAn7NtTExJgztwco5cdZjrt/iViU/oFeav+Q8K1c93M/tIZZ00QkT65JMr4xXQk7Vv5hWQ==
+  dependencies:
+    "@types/jest" "^27.0.1"
 
 semver@7.0.0:
   version "7.0.0"
