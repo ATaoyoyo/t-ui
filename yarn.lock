@@ -1987,15 +1987,6 @@ css-render@^0.13.2:
     "@types/node" "~14.14.31"
     csstype "~3.0.5"
 
-css-render@^0.15.6:
-  version "0.15.6"
-  resolved "https://registry.nlark.com/css-render/download/css-render-0.15.6.tgz#93b778ffc38120f8cd4e135941f0d76ee4c1b783"
-  integrity sha1-k7d4/8OBIPjNThNZQfDXbuTBt4M=
-  dependencies:
-    "@emotion/hash" "~0.8.0"
-    "@types/node" "~14.14.31"
-    csstype "~3.0.5"
-
 css@^2.1.0:
   version "2.2.4"
   resolved "https://registry.nlark.com/css/download/css-2.2.4.tgz#c646755c73971f2bba6a601e2cf2fd71b1298929"
