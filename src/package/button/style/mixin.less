@@ -1,0 +1,36 @@
+.btn() {
+  position   : relative;
+  white-space: nowrap;
+  .button-size(@line-height-base; @btn-padding-y-base; @font-size-base; @border-radius-base);
+
+  &,
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+.button-color(@color; @bgColor; @borderColor) {
+  color           : @color;
+  background-color: @bgColor;
+  border-color    : @borderColor;
+}
+
+
+.button-size(@height; @paddingY; @fontSize; @borderRadius) {
+  @paddingX: max((round(((@height - @fontSize * @line-height-base) / 2) * 10) / 10) - @border-width-base,
+    0);
+  padding      : @paddingX @paddingY;
+  height       : @height;
+  font-size    : @fontSize;
+  border-radius: @borderRadius;
+}
+
+.btn-types(@color; @bgColor; ) {
+  .button-color(@color, @bgColor, @bgColor);
+
+  &:hover,
+  &:focus {
+    .button-color(@color, @bgColor, @borderColor)
+  }
+}
