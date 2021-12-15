@@ -3,6 +3,7 @@
     <div class="buttons">
       <TButton>Default</TButton>
       <TButton type="primary">Primary</TButton>
+      <TButton type="info">Info</TButton>
       <TButton type="success">Success</TButton>
       <TButton type="warning">Warning</TButton>
       <TButton type="error">Error</TButton>
@@ -11,6 +12,7 @@
     <div class="buttons">
       <TButton round>Default</TButton>
       <TButton round type="primary">Primary</TButton>
+      <TButton round type="info">Info</TButton>
       <TButton round type="success">Success</TButton>
       <TButton round type="warning">Warning</TButton>
       <TButton round type="error">Error</TButton>
@@ -19,6 +21,7 @@
     <div class="buttons">
       <TButton plain>Default</TButton>
       <TButton plain type="primary">Primary</TButton>
+      <TButton plain type="info">Info</TButton>
       <TButton plain type="success">Success</TButton>
       <TButton plain type="warning">Warning</TButton>
       <TButton plain type="error">Error</TButton>
