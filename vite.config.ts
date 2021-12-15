@@ -8,6 +8,17 @@ const path = (name: string) => resolve(__dirname, name)
 export default defineConfig({
   plugins: [vue()],
 
+  css: {
+    preprocessorOptions: {
+      less: {
+        modifyVars: {
+          hack: `true; @import(reference) "${path('src/theme/common/var.less')}"`,
+        },
+        javascriptEnabled: true,
+      },
+    },
+  },
+
   define: {
     __VUE_PROD_DEVTOOLS__: true,
   },
