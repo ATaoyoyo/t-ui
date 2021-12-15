@@ -1,7 +1,10 @@
 .btn() {
   position   : relative;
   white-space: nowrap;
-  .button-size(@line-height-base; @btn-padding-y-base; @font-size-base; @border-radius-base);
+  outline    : none;
+  border     : none;
+  cursor     : pointer;
+  .button-size(@height-base; @btn-padding-x-base; @btn-padding-y-base; @font-size-base; @border-radius-base);
 
   &,
   &:active,
@@ -11,23 +14,24 @@
 }
 
 .button-color(@color; @bgColor; @borderColor) {
-  color           : @color;
-  background-color: @bgColor;
-  border-color    : @borderColor;
+  color              : @color;
+  background-color   : @bgColor;
+  border             : 1px solid @borderColor;
+  // border-color    : @borderColor;
 }
 
 
-.button-size(@height; @paddingY; @fontSize; @borderRadius) {
-  @paddingX: max((round(((@height - @fontSize * @line-height-base) / 2) * 10) / 10) - @border-width-base,
-    0);
-  padding      : @paddingX @paddingY;
+.button-size(@height; @paddingX; @paddingY; @fontSize; @borderRadius) {
+  // @paddingX: max((round(((@height - @fontSize * @line-height-base) / 2) * 10) / 10) - @border-width-base,
+  //   0);
+  padding      : @paddingY @paddingX;
   height       : @height;
   font-size    : @fontSize;
   border-radius: @borderRadius;
 }
 
-.btn-types(@color; @bgColor; ) {
-  .button-color(@color, @bgColor, @bgColor);
+.btn-types(@color; @bgColor; @borderColor) {
+  .button-color(@color, @bgColor, @borderColor);
 
   &:hover,
   &:focus {

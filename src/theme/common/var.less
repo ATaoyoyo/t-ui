@@ -1,67 +1,76 @@
 // theme color
-@primary: '#4FB233';
-@info   : '#335FFF';
-@success: '#4FB233';
-@warning: '#FFAC26';
-@error  : '#D92149';
+@default: #ffffff;
+@primary: #4FB233;
+@info   : #335FFF;
+@success: #4FB233;
+@warning: #FFAC26;
+@error  : #D92149;
 
 // color status
-@primaryColor       : primary;
-@primaryColorHover  : tint(primary, 10%);
-@primaryColorPressed: tint(primary, 20%);
-@infoColor          : info;
-@infoColorHover     : tint(info, 10%);
-@infoColorPressed   : tint(info, 20%);
-@successColor       : success;
-@successColorHover  : tint(success, 10%);
-@successColorPressed: tint(success, 20%);
-@warningColor       : warning;
-@warningColorHover  : tint(warning, 10%);
-@warningColorPressed: tint(warning, 20%);
-@errorColor         : error;
-@errorColorHover    : tint(error, 10%);
-@errorColorPressed  : tint(error, 20%);
+@defaultColor       : @default;
+@defaultColorHover  : tint(@default, 10%);
+@defaultColorPressed: tint(@default, 20%);
+@primaryColor       : @primary;
+@primaryColorHover  : tint(@primary, 10%);
+@primaryColorPressed: tint(@primary, 20%);
+@infoColor          : @info;
+@infoColorHover     : tint(@info, 10%);
+@infoColorPressed   : tint(@info, 20%);
+@successColor       : @success;
+@successColorHover  : tint(@success, 10%);
+@successColorPressed: tint(@success, 20%);
+@warningColor       : @warning;
+@warningColorHover  : tint(@warning, 10%);
+@warningColorPressed: tint(@warning, 20%);
+@errorColor         : @error;
+@errorColorHover    : tint(@error, 10%);
+@errorColorPressed  : tint(@error, 20%);
 
 // font size
-@font-size-small : '12px';
-@font-size-base  : '16px';
-@font-size-medium: '20px';
-@font-size-large : '24px';
+@font-size-small : 12px;
+@font-size-base  : 16px;
+@font-size-medium: 20px;
+@font-size-large : 24px;
 
 // base color
-@baseTextBlackColor: '#303133';
-@baseTextWhiteColor: '#ffffff';
-@transparent       : 'transparent';
+@baseTextBlackColor: #303133;
+@baseTextWhiteColor: #ffffff;
+@transparent       : transparent;
 
 // gray text color
-@text-gray-100: '#333333';
-@text-gray-200: '#666666';
-@text-gray-300: '#999999';
-@text-gray-400: '#cccccc';
-@text-gray-500: '#d7dae0';
-@text-gray-600: '#ebedf0';
+@text-gray-100: #333333;
+@text-gray-200: #666666;
+@text-gray-300: #999999;
+@text-gray-400: #cccccc;
+@text-gray-500: #d7dae0;
+@text-gray-600: #ebedf0;
 
 // black text color
-@text-black-100: '#c0c4cc';
-@text-black-200: '#909399';
-@text-black-300: '#606266';
-@text-black-400: '#303133';
-@text-black-500: '#212121';
-@text-black-600: '#000000';
+@text-black-100: #c0c4cc;
+@text-black-200: #909399;
+@text-black-300: #606266;
+@text-black-400: #303133;
+@text-black-500: #212121;
+@text-black-600: #000000;
 
 // white text color
-@text-white-100: '';
-@text-white-200: '';
-@text-white-300: '';
-@text-white-400: '';
-@text-white-500: '';
-@text-white-600: '#ffffff';
+@text-white-100: #ffffff;
+@text-white-200: #ffffff;
+@text-white-300: #ffffff;
+@text-white-400: #ffffff;
+@text-white-500: #ffffff;
+@text-white-600: #ffffff;
 
 // space
 @content-space: 20px;
 
 // line height
 @line-height-base : 1.5715;
+
+// height
+@height-base : 34px;
+@height-sm   : 30px;
+@height-large: 38px;
 
 // border radius
 @border-radius-base : 3px;
@@ -75,3 +84,6 @@
 @btn-padding-y-base: 5px;
 @btn-padding-y-sm  : @btn-padding-y-base;
 @btn-padding-y-lg  : 8px;
+@btn-padding-x-base: 6px;
+@btn-padding-x-sm  : @btn-padding-x-base;
+@btn-padding-x-lg  : 10px;

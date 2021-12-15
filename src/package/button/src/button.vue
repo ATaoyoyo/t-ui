@@ -26,7 +26,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
 
-import { buttonType, buttonSize } from './button'
+import { buttonType, buttonSize } from './interface'
 
 export default defineComponent({
   name: 'TButton',
@@ -60,23 +60,32 @@ export default defineComponent({
 </script>
 
 <style lang="less" scoped>
-@import url('../style/index.less');
+@import '../style/index.less';
 .t-button {
-  display: inline-flex;
-  flex-wrap: nowrap;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-  user-select: none;
+  .btn();
 
-  &__icon {
-    font-size: 16px;
+  &.is-default {
+    .btn-types(@baseTextBlackColor, @defaultColor, @text-black-100);
   }
 
-  &__content {
-    display: flex;
-    align-items: center;
-    flex-wrap: nowrap;
+  &.is-primary {
+    .btn-types(@baseTextWhiteColor, @primaryColor, @primaryColor);
+  }
+
+  &.is-info {
+    .btn-types(@baseTextWhiteColor, @infoColor, @infoColor);
+  }
+
+  &.is-success {
+    .btn-types(@baseTextWhiteColor, @successColor, @successColor);
+  }
+
+  &.is-warning {
+    .btn-types(@baseTextWhiteColor, @warningColor, @warningColor);
+  }
+
+  &.is-error {
+    .btn-types(@baseTextWhiteColor, @errorColor, @errorColor);
   }
 }
 </style>
