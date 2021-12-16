@@ -1,15 +1,21 @@
-import TButton, { TButtonGroup } from './button'
-import TIcon from './icon'
-import TInput from './input'
+import { App, Plugin } from 'vue'
 
-const COMPONENTS = [TButton, TButtonGroup, TIcon, TInput]
+import { ButtonPlugin } from './button'
+import { IconPlugin } from './icon'
+import { InputPlugin } from './input'
 
-const TUi = {
-  install: function (Vue: any, options: {}) {
+const COMPONENTS = [ButtonPlugin, IconPlugin, InputPlugin]
+
+const TUi: Plugin = {
+  install: function (app: App, options: {}) {
     COMPONENTS.forEach((component) => {
-      Vue.component(component.name, component)
+      component.install?.(app)
     })
   },
 }
 
 export default TUi
+
+export * from './button'
+export * from './icon'
+export * from './input'

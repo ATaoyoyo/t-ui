@@ -13,7 +13,7 @@ export default defineComponent({
   components: { Icon },
 
   props: {
-    size: [String, Number],
+    size: { type: [String, Number], default: 17 },
 
     color: String,
 
