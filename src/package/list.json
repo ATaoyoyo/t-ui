@@ -1,0 +1,9 @@
+[
+  {
+    "path": "button",
+    "componentName": "Button",
+    "componentZhName": "按钮",
+    "desc": "这是一个按钮",
+    "className": "button"
+  }
+]
