@@ -1,20 +1,36 @@
 {
+  "exclude": ["node_modules", "**/*.spec.ts"],
+  "include": [
+    "*.ts",
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "packages/**/*.ts",
+    "packages/**/*.d.ts",
+    "packages/**/*.tsx",
+    "packages/**/*.vue",
+    "src/**/*.json"
+  ],
   "compilerOptions": {
     "paths": {
-      "naive-ui": ["./src"]
+      "src/*": ["./src"]
     },
     "strict": true,
     "strictNullChecks": true,
-    "jsx": "react",
+    "jsx": "preserve",
     "jsxFactory": "h",
     "jsxFragmentFactory": "Fragment",
-    "module": "ES6",
+    "module": "esnext",
     "moduleResolution": "Node",
     "declaration": true,
     "forceConsistentCasingInFileNames": true,
     "composite": true,
     "target": "ES6",
+    "sourceMap": true,
     "esModuleInterop": true,
+    "allowJs": true,
+    "resolveJsonModule": true,
     "lib": ["ESNext", "DOM"]
   }
 }
