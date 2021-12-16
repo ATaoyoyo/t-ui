@@ -1,5 +1,9 @@
 .btn() {
   position   : relative;
+  font-size  : @font-size-base;
+  font-weight: @font-weight-base;
+  text-align : center;
+  transition : color 0.3s ease-in-out, background 0.3s ease-in-out, border 0.3s ease-in-out;
   white-space: nowrap;
   outline    : none;
   border     : none;
@@ -20,6 +24,24 @@
   // border-color    : @borderColor;
 }
 
+.btn-round(@height) {
+  @radius      : calc(@height / 2);
+  border-radius: @radius;
+}
+
+.btn-dashed(@color; @borderColor; @hoverColor) {
+  // background-color: transparent;
+  .button-color(@color; @default; @color);
+  border: 1px dashed @borderColor;
+
+
+  &:focus,
+  &:hover {
+    .button-color(@hoverColor, transparent, @hoverColor);
+    border: 1px dashed @hoverColor;
+  }
+}
+
 
 .button-size(@height; @paddingX; @paddingY; @fontSize; @borderRadius) {
   // @paddingX: max((round(((@height - @fontSize * @line-height-base) / 2) * 10) / 10) - @border-width-base,
@@ -30,11 +52,11 @@
   border-radius: @borderRadius;
 }
 
-.btn-types(@color; @bgColor; @borderColor) {
+.btn-types(@color; @bgColor; @borderColor; @hoverTextColor; @hoverColor; @hoverBorderColor) {
   .button-color(@color, @bgColor, @borderColor);
 
   &:hover,
   &:focus {
-    .button-color(@color, @bgColor, @borderColor)
+    .button-color(@hoverTextColor, @hoverColor, @hoverBorderColor)
   }
 }

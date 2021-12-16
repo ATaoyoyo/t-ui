@@ -15,16 +15,16 @@
     ]"
     @click="onClick($event)"
   >
-    <span class="t-button__icon">
-      <slot name="icon"></slot>
-    </span>
     <span class="t-button__content">
+      <span class="t-button__icon" :style="{ marginRight: $slots.icon ? '5px' : 0 }">
+        <slot name="icon"></slot>
+      </span>
       <slot></slot>
     </span>
   </button>
 </template>
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
+import { defineComponent, getCurrentInstance, PropType } from 'vue'
 
 import { buttonType, buttonSize } from './interface'
 
@@ -49,7 +49,7 @@ export default defineComponent({
     text: Boolean,
   },
 
-  setup(_props, ctx) {
+  setup(props, ctx) {
     const onClick = (e: MouseEvent) => {
       ctx.emit('click', e)
     }
@@ -61,31 +61,4 @@ export default defineComponent({
 
 <style lang="less" scoped>
 @import '../style/index.less';
-.t-button {
-  .btn();
-
-  &.is-default {
-    .btn-types(@baseTextBlackColor, @defaultColor, @text-black-100);
-  }
-
-  &.is-primary {
-    .btn-types(@baseTextWhiteColor, @primaryColor, @primaryColor);
-  }
-
-  &.is-info {
-    .btn-types(@baseTextWhiteColor, @infoColor, @infoColor);
-  }
-
-  &.is-success {
-    .btn-types(@baseTextWhiteColor, @successColor, @successColor);
-  }
-
-  &.is-warning {
-    .btn-types(@baseTextWhiteColor, @warningColor, @warningColor);
-  }
-
-  &.is-error {
-    .btn-types(@baseTextWhiteColor, @errorColor, @errorColor);
-  }
-}
 </style>

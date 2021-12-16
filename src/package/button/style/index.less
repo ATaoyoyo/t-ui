@@ -1,3 +1,99 @@
-@import '../../../theme/common/index.less';
-@import '../../../theme/mixins/index.less';
+@import '../../../theme/index.less';
 @import './mixin.less';
+
+.t-button {
+  .btn();
+
+  &__icon {
+    text-align: center;
+  }
+
+  &__content {
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+  }
+
+  &.is-round {
+    .btn-round(@height-base);
+  }
+
+  &.is-circle {
+    width        : @height-base;
+    height       : @height-base;
+    text-align   : center;
+    border-radius: 50%;
+  }
+
+  &.is-default {
+    .btn-types(@baseTextBlackColor, @defaultColor, @border-color-gray, @primaryColor, @defaultColor, @primaryColor);
+
+    &.is-plain {
+      .btn-types(@baseTextBlackColor, @defaultColorPlain, @border-color-gray, @primaryColor, @defaultColor, @primaryColorPlain);
+    }
+
+    &.is-dashed {
+      .btn-dashed(@baseTextBlackColor, @border-color-gray, @primaryColorHover);
+    }
+  }
+
+  &.is-primary {
+    .btn-types(@baseTextWhiteColor, @primaryColor, @primaryColor, @baseTextWhiteColor, @primaryColorHover, @primaryColorHover);
+
+    &.is-plain {
+      .btn-types(@primaryColor, @primaryColorPlain, @primaryColorPlain, @baseTextWhiteColor, @primaryColor, @primaryColor);
+    }
+
+    &.is-dashed {
+      .btn-dashed(@primaryColor, @primaryColor, @primaryColorHover);
+    }
+  }
+
+  &.is-info {
+    .btn-types(@baseTextWhiteColor, @infoColor, @infoColor, @baseTextWhiteColor, @infoColorHover, @infoColorHover);
+
+    &.is-plain {
+      .btn-types(@infoColor, @infoColorPlain, @infoColorPlain, @baseTextWhiteColor, @infoColor, @infoColor);
+    }
+
+    &.is-dashed {
+      .btn-dashed(@infoColor, @infoColor, @infoColorHover);
+    }
+  }
+
+  &.is-success {
+    .btn-types(@baseTextWhiteColor, @successColor, @successColor, @baseTextWhiteColor, @successColorHover, @successColorHover);
+
+    &.is-plain {
+      .btn-types(@successColor, @successColorPlain, @successColorPlain, @baseTextWhiteColor, @successColor, @successColor);
+    }
+
+    &.is-dashed {
+      .btn-dashed(@successColor, @successColor, @successColorHover);
+    }
+  }
+
+  &.is-warning {
+    .btn-types(@baseTextWhiteColor, @warningColor, @warningColor, @baseTextWhiteColor, @warningColorHover, @warningColorHover);
+
+    &.is-plain {
+      .btn-types(@warningColor, @warningColorPlain, @warningColorPlain, @baseTextWhiteColor, @warningColor, @warningColor);
+    }
+
+    &.is-dashed {
+      .btn-dashed(@warningColor, @warningColor, @warningColorHover);
+    }
+  }
+
+  &.is-error {
+    .btn-types(@baseTextWhiteColor, @errorColor, @errorColor, @baseTextWhiteColor, @errorColorHover, @errorColorHover);
+
+    &.is-plain {
+      .btn-types(@errorColor, @errorColorPlain, @errorColorPlain, @baseTextWhiteColor, @errorColor, @errorColor);
+    }
+
+    &.is-dashed {
+      .btn-dashed(@errorColor, @errorColor, @errorColorHover);
+    }
+  }
+}
