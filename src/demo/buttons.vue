@@ -1,7 +1,7 @@
 <template>
   <div class="button">
     <div class="buttons">
-      <TButton>Default</TButton>
+      <TButton @click="handleClick">Default</TButton>
       <TButton type="primary">Primary</TButton>
       <TButton type="info">Info</TButton>
       <TButton type="success">Success</TButton>
@@ -30,6 +30,7 @@
     <div class="buttons">
       <TButton round plain>Default</TButton>
       <TButton round plain type="primary">Primary</TButton>
+      <TButton round plain type="info">Info</TButton>
       <TButton round plain type="success">Success</TButton>
       <TButton round plain type="warning">Warning</TButton>
       <TButton round plain type="error">Error</TButton>
@@ -38,6 +39,7 @@
     <div class="buttons">
       <TButton dashed>Default</TButton>
       <TButton dashed type="primary">Primary</TButton>
+      <TButton dashed type="info">Info</TButton>
       <TButton dashed type="success">Success</TButton>
       <TButton dashed type="warning">Warning</TButton>
       <TButton dashed type="error">Error</TButton>
@@ -46,6 +48,7 @@
     <div class="buttons">
       <TButton round dashed>Default</TButton>
       <TButton round dashed type="primary">Primary</TButton>
+      <TButton round dashed type="info">Info</TButton>
       <TButton round dashed type="success">Success</TButton>
       <TButton round dashed type="warning">Warning</TButton>
       <TButton round dashed type="error">Error</TButton>
@@ -169,6 +172,14 @@ export default {
   name: 'Buttons',
 
   components: { BarbellOutline, CardOutline },
+
+  setup() {
+    const handleClick = (e: MouseEvent) => {
+      console.log(e, '我是Button')
+    }
+
+    return { handleClick }
+  },
 }
 </script>
 <style lang="less" scoped>

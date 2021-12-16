@@ -1,24 +1,22 @@
 <script setup lang="ts">
-import Buttons from '@/demo/buttons.vue'
-import Inputs from '@/demo/inputs.vue'
-import { AirplaneOutline } from '@vicons/ionicons5'
+import demo from './demo/index.vue'
 </script>
 
 <template>
-  <div id="app">
-    <Inputs />
-    <Buttons />
-    <TIcon color="#f66">
-      <AirplaneOutline />
-    </TIcon>
-  </div>
+  <demo />
 </template>
 
 <style lang="less">
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
 #app {
   font-family: Helvetica, Arial, sans-serif;
   color: #2c3e50;
-  margin: 60px auto;
-  width: 750px;
 }
 </style>
