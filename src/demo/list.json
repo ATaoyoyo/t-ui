@@ -1,0 +1,21 @@
+[
+  {
+    "title": "通用组件",
+    "components": [
+      {
+        "path": "button",
+        "componentName": "Button",
+        "componentZhName": "按钮",
+        "desc": "这是一个按钮",
+        "className": "button"
+      },
+      {
+        "path": "icon",
+        "componentName": "Icon",
+        "componentZhName": "图标",
+        "desc": "这是图标",
+        "className": "icon"
+      }
+    ]
+  }
+]
