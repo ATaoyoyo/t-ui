@@ -25,6 +25,10 @@
     border-radius: 50%;
   }
 
+  &.is-disabled {
+    cursor: not-allowed;
+  }
+
   &.is-default {
     .btn-types(@baseTextBlackColor, @defaultColor, @border-color-gray, @primaryColor, @defaultColor, @primaryColor);
 
@@ -34,6 +38,12 @@
 
     &.is-dashed {
       .btn-dashed(@baseTextBlackColor, @border-color-gray, @primaryColorHover);
+    }
+
+    &.is-disabled {
+      @disabledColor: tint(#f1f1f1, 80%);
+
+      .btn-types(@text-black-100, @disabledColor, @border-color-gray, @text-black-100, @disabledColor, @border-color-gray);
     }
   }
 
@@ -47,6 +57,12 @@
     &.is-dashed {
       .btn-dashed(@primaryColor, @primaryColor, @primaryColorHover);
     }
+
+    &.is-disabled {
+      @disabledColor: mix(@primaryColor, #fff, 30%);
+
+      .btn-types(@text-white-100, @disabledColor, @disabledColor, @text-white-100, @disabledColor, @disabledColor);
+    }
   }
 
   &.is-info {
@@ -58,6 +74,12 @@
 
     &.is-dashed {
       .btn-dashed(@infoColor, @infoColor, @infoColorHover);
+    }
+
+    &.is-disabled {
+      @disabledColor: mix(@infoColor, #fff, 30%);
+
+      .btn-types(@text-white-100, @disabledColor, @disabledColor, @text-white-100, @disabledColor, @disabledColor);
     }
   }
 
@@ -71,6 +93,12 @@
     &.is-dashed {
       .btn-dashed(@successColor, @successColor, @successColorHover);
     }
+
+    &.is-disabled {
+      @disabledColor: mix(@successColor, #fff, 30%);
+
+      .btn-types(@text-white-100, @disabledColor, @disabledColor, @text-white-100, @disabledColor, @disabledColor);
+    }
   }
 
   &.is-warning {
@@ -83,6 +111,12 @@
     &.is-dashed {
       .btn-dashed(@warningColor, @warningColor, @warningColorHover);
     }
+
+    &.is-disabled {
+      @disabledColor: mix(@warningColor, #fff, 30%);
+
+      .btn-types(@text-white-100, @disabledColor, @disabledColor, @text-white-100, @disabledColor, @disabledColor);
+    }
   }
 
   &.is-error {
@@ -94,6 +128,12 @@
 
     &.is-dashed {
       .btn-dashed(@errorColor, @errorColor, @errorColorHover);
+    }
+
+    &.is-disabled {
+      @disabledColor: mix(@errorColor, #fff, 30%);
+
+      .btn-types(@text-white-100, @disabledColor, @disabledColor, @text-white-100, @disabledColor, @disabledColor);
     }
   }
 }
