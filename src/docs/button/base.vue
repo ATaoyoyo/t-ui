@@ -6,17 +6,19 @@
     <t-button @click="handleClick('Success')" type="success">Success</t-button>
     <t-button @click="handleClick('Warning')" type="warning">Warning</t-button>
     <t-button @click="handleClick('Error')" type="error">Error</t-button>
+
+    <Preview name="button" instance="base" />
   </div>
 </template>
 <script>
+import Preview from '../../demo/Preview.vue'
 export default {
   name: 'Base',
-
   setup() {
     const handleClick = (value) => console.log(value)
-
     return { handleClick }
   },
+  components: { Preview },
 }
 </script>
 <style lang="less" scoped>

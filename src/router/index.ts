@@ -2,9 +2,9 @@ import { createRouter, createWebHashHistory, RouterOptions } from 'vue-router'
 const routes = [
   {
     title: '按钮',
-    path: '/button',
+    path: '/components/button',
     name: 'button',
-    component: () => import(`../package/button/docs/README.md`),
+    component: () => import('../docs/button/index.vue'),
   },
 ]
 
