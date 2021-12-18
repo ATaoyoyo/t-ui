@@ -47,8 +47,6 @@ export default defineComponent({
 
     text: Boolean,
   },
-
-  setup(props, ctx) {},
 })
 </script>
 

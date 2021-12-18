@@ -112,36 +112,23 @@ const handClick = (e) => console.log('primary', e)
 
 ```vue
 <template>
-  <TButton circle>
-    <TIcon color="#212121">蛤</TIcon>
-  </TButton>
-  <TButton circle type="primary">
-    <TIcon color="#fff">蛤</TIcon>
-  </TButton>
-  <TButton circle type="success">
-    <TIcon color="#fff">蛤</TIcon>
-  </TButton>
-  <TButton circle type="warning">
-    <TIcon color="#fff">蛤</TIcon>
-  </TButton>
-  <TButton circle type="error">
-    <TIcon color="#fff">蛤</TIcon>
-  </TButton>
-  <TButton dashed circle>
-    <TIcon color="#2080F0">蛤</TIcon>
-  </TButton>
-  <TButton dashed circle type="primary">
-    <TIcon color="#2080F0">蛤</TIcon>
-  </TButton>
-  <TButton dashed circle type="success">
-    <TIcon color="#18A058">蛤</TIcon>
-  </TButton>
-  <TButton dashed circle type="warning">
-    <TIcon color="#FCB040">蛤</TIcon>
-  </TButton>
-  <TButton dashed circle type="error">
-    <TIcon color="#D03050">蛤</TIcon>
-  </TButton>
+  <TButton circle> 蛤 </TButton>
+  <TButton circle type="primary"> 蛤 </TButton>
+  <TButton circle type="success"> 蛤 </TButton>
+</template>
+```
+
+:::
+
+## 文字按钮
+
+:::demo
+
+```vue
+<template>
+  <t-button text>text button</t-button>
+  <t-button text type="success">text button</t-button>
+  <t-button text disabled type="info">text button</t-button>
 </template>
 ```
 
@@ -167,6 +154,24 @@ const handClick = (e) => console.log('primary', e)
 <script setup>
 const handClick = (e) => console.log('primary', e)
 </script>
+```
+
+:::
+
+## 不同尺寸的按钮
+
+除了默认的大小，按钮组件还提供了几种额外的尺寸可供选择，以便适配不同的场景。
+
+通过设置 `size`，属性来设置不同的按钮尺寸，可供选择的尺寸有：`medium`、`small`、`mini`。
+:::demo
+
+```vue
+<template>
+  <t-button>Default</t-button>
+  <t-button size="medium">Medium</t-button>
+  <t-button size="small">Small</t-button>
+  <t-button size="mini">Mini</t-button>
+</template>
 ```
 
 :::

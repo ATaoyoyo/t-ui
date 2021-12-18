@@ -8,4 +8,4 @@ export type buttonType =
   | 'text'
   | ''
 
-export type buttonSize = 'large' | 'middle' | 'small' | 'mini'
+export type buttonSize = 'default' | 'medium' | 'small' | 'mini'

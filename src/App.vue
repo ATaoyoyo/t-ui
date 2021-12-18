@@ -1,5 +1,5 @@
 <template>
-  <t-button @click="handClick">click me</t-button>
+  <t-button type="text" @click="handClick">click me</t-button>
 </template>
 
 <script setup lang="ts">

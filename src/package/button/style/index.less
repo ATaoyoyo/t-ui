@@ -25,6 +25,36 @@
     border-radius: 50%;
   }
 
+  &.is-default {
+    .button-size(@height-base; @btn-padding-x-base; @btn-padding-y-base; @font-size-base; @border-radius-base);
+  }
+
+  &.is-medium {
+    .button-size(@height-medium; @btn-padding-x-base;
+      @btn-padding-y-base;
+      @font-size-base;
+      @border-radius-base);
+  }
+
+  &.is-small {
+
+    .button-size(@height-small; @btn-padding-x-sm;
+      @btn-padding-y-sm;
+      @font-size-base;
+      @border-radius-base);
+    font-size: 14px;
+  }
+
+  &.is-mini {
+
+    .button-size(@height-mini; @btn-padding-x-sm;
+      @btn-padding-y-sm;
+      @font-size-base;
+      @border-radius-base);
+
+    font-size: 12px;
+  }
+
   &.is-disabled {
     cursor: not-allowed;
   }
@@ -63,6 +93,10 @@
 
       .btn-types(@text-white-100, @disabledColor, @disabledColor, @text-white-100, @disabledColor, @disabledColor);
     }
+
+    &.is-text {
+      .btn-text(@primaryColor, @primaryColorHover)
+    }
   }
 
   &.is-info {
@@ -80,6 +114,10 @@
       @disabledColor: mix(@infoColor, #fff, 30%);
 
       .btn-types(@text-white-100, @disabledColor, @disabledColor, @text-white-100, @disabledColor, @disabledColor);
+    }
+
+    &.is-text {
+      .btn-text(@infoColor, @infoColorHover)
     }
   }
 
@@ -99,6 +137,10 @@
 
       .btn-types(@text-white-100, @disabledColor, @disabledColor, @text-white-100, @disabledColor, @disabledColor);
     }
+
+    &.is-text {
+      .btn-text(@successColor, @successColorHover)
+    }
   }
 
   &.is-warning {
@@ -116,6 +158,10 @@
       @disabledColor: mix(@warningColor, #fff, 30%);
 
       .btn-types(@text-white-100, @disabledColor, @disabledColor, @text-white-100, @disabledColor, @disabledColor);
+    }
+
+    &.is-text {
+      .btn-text(@warningColor, @warningColorHover)
     }
   }
 
@@ -135,5 +181,13 @@
 
       .btn-types(@text-white-100, @disabledColor, @disabledColor, @text-white-100, @disabledColor, @disabledColor);
     }
+
+    &.is-text {
+      .btn-text(@errorColor, @errorColorHover)
+    }
+  }
+
+  &.is-text {
+    .btn-text(@baseTextBlackColor, @primaryColorHover)
   }
 }

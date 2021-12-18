@@ -3,7 +3,7 @@
   font-size  : @font-size-base;
   font-weight: @font-weight-base;
   text-align : center;
-  transition : color 0.3s ease-in-out, background 0.3s ease-in-out, border 0.3s ease-in-out;
+  transition : color 0.3s ease-in, background-color 0.3s ease-in, border 0.3s ease-in;
   white-space: nowrap;
   outline    : none;
   border     : none;
@@ -58,5 +58,22 @@
   &:hover,
   &:focus {
     .button-color(@hoverTextColor, @hoverColor, @hoverBorderColor)
+  }
+}
+
+.btn-text(@color, @hoverColor) {
+  color           : @color;
+  border          : none;
+  background-color: transparent;
+
+  &:hover,
+  &:focus {
+    color           : @hoverColor;
+    border          : none;
+    background-color: transparent;
+  }
+
+  &.is-disabled {
+    color: mix(@hoverColor, #fff, 35%);
   }
 }
