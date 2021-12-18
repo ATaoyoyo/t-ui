@@ -4,7 +4,7 @@ const routes = [
     title: '按钮',
     path: '/components/button',
     name: 'button',
-    component: () => import('../docs/button/index.vue'),
+    component: () => import('../demo/buttons.vue'),
   },
 ]
 

@@ -1,7 +1,7 @@
 <template>
   <button
-    class="t-button"
     :class="[
+      't-button',
       type ? 'is-' + type : 'is-default',
       size ? 'is-' + size : '',
       {
@@ -13,7 +13,6 @@
         'is-text': text,
       },
     ]"
-    @click="onClick($event)"
   >
     <span class="t-button__content">
       <span class="t-button__icon" :style="{ marginRight: $slots.icon ? '5px' : 0 }">
@@ -24,7 +23,7 @@
   </button>
 </template>
 <script lang="ts">
-import { defineComponent, getCurrentInstance, PropType } from 'vue'
+import { defineComponent, PropType } from 'vue'
 
 import { buttonType, buttonSize } from './interface'
 
@@ -49,13 +48,7 @@ export default defineComponent({
     text: Boolean,
   },
 
-  setup(props, ctx) {
-    const onClick = (e: MouseEvent) => {
-      ctx.emit('click', e)
-    }
-
-    return { onClick }
-  },
+  setup(props, ctx) {},
 })
 </script>
 

@@ -1,10 +1,10 @@
-<script setup lang="ts">
-import demo from './demo/index.vue'
-</script>
-
 <template>
-  <demo />
+  <t-button @click="handClick">click me</t-button>
 </template>
+
+<script setup lang="ts">
+const handClick = (e: MouseEvent) => console.log(e)
+</script>
 
 <style lang="less">
 html,
