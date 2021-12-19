@@ -175,3 +175,32 @@ const handClick = (e) => console.log('primary', e)
 ```
 
 :::
+
+:::demo
+
+```vue
+<template>
+  <t-button icon="CashOutline">
+    <template #icon>
+      <t-icon>
+        <cash-icon />
+      </t-icon>
+    </template>
+    来点钞票
+  </t-button>
+  <t-button>
+    <template #icon>
+      <t-icon>
+        <cash-icon />
+      </t-icon>
+    </template>
+    来点钞票
+  </t-button>
+</template>
+<script setup>
+import { ref } from 'vue'
+import Vicons from '@vicons/ionicons5'
+</script>
+```
+
+:::

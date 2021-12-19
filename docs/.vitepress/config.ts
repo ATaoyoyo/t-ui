@@ -23,6 +23,16 @@ module.exports = {
   title: 'Terrific UI',
   description: 'A simple Vue3 UI component.',
   lang: 'en-US',
+  head: [
+    [
+      'link',
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: './public/images/T.png',
+      },
+    ],
+  ],
   themeConfig: {
     // 展示搜索框
     algolia: {
@@ -50,28 +60,9 @@ module.exports = {
   markdown: {
     config: (md) => {
       const { demoBlockPlugin } = require('vitepress-theme-demoblock')
-      md.use(demoBlockPlugin)
+      md.use(demoBlockPlugin, {
+        scriptImports: ["import Vicons from '@vicons/ionicons5'"],
+      })
     },
   },
-}
-
-function getDemoSidebar() {
-  return [
-    {
-      text: '基础组件',
-      children: [
-        {
-          text: 'Button 按钮',
-          link: '/components/button/',
-        },
-        {
-          text: 'Icon 图标',
-          link: '/components/icon/',
-        },
-      ],
-    },
-    {
-      text: '布局组件',
-    },
-  ]
 }

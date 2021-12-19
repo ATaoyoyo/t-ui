@@ -1,8 +1,16 @@
 <template>
-  <t-button type="text" @click="handClick">click me</t-button>
+  <t-button type="info" @click="handClick" icon="CashOutline">
+    <template #icon>
+      <t-icon>
+        <cash-icon />
+      </t-icon>
+    </template>
+    Icon Button
+  </t-button>
 </template>
 
 <script setup lang="ts">
+import { CashOutline as CashIcon } from '@vicons/ionicons5'
 const handClick = (e: MouseEvent) => console.log(e)
 </script>
 
