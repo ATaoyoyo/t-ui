@@ -199,7 +199,7 @@ const handClick = (e) => console.log('primary', e)
 </template>
 <script setup>
 import { ref } from 'vue'
-import Vicons from '@vicons/ionicons5'
+// import Vicons from '@vicons/ionicons5'
 </script>
 ```
 
